@@ -1,6 +1,6 @@
 #ifndef BEZIER_HPP
 #define BEZIER_HPP
-
+#include <ostream>
 class bezier {
     float P[4];
     
