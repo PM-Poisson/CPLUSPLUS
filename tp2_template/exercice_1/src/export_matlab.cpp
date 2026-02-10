@@ -22,10 +22,10 @@ void export_matlab(std::string const& filename,bezier const& b,int const sample)
 
     //export the control polygon
     ofs<<"polygon=[";
-    ofs<<"["<<0.0f   <<";" << b.coeff(0) << "],";
-    ofs<<"["<<1.0f/3 <<";" << b.coeff(1) << "],";
-    ofs<<"["<<2.0f/3 <<";" << b.coeff(2) << "],";
-    ofs<<"["<<1.0f   <<";" << b.coeff(3) << "]";
+    // ofs<<"["<<0.0f   <<";" << b.coeff(0) << "],";
+    // ofs<<"["<<1.0f/3 <<";" << b.coeff(1) << "],";
+    // ofs<<"["<<2.0f/3 <<";" << b.coeff(2) << "],";
+    // ofs<<"["<<1.0f   <<";" << b.coeff(3) << "]";
     ofs<<"];"<<std::endl;
 
     ofs<<"curve=[";
@@ -34,9 +34,9 @@ void export_matlab(std::string const& filename,bezier const& b,int const sample)
     for(int k=0;k<sample;++k)
     {
         float const s = k/(sample-1.0f);
-        float const y = b(s);
+        // float const y = b(s);
 
-        ofs<<"["<<s<<";"<<y<<"]";
+        // ofs<<"["<<s<<";"<<y<<"]";
         
         if(k<sample-1)
             ofs<<",";
