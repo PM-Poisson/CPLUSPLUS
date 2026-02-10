@@ -2,7 +2,7 @@
 #define BEZIER_HPP
 
 class bezier {
-    const float P[4];
+    float P[4];
     
 public :
     bezier();
@@ -10,7 +10,6 @@ public :
     float coeff(int i) const;
     float& coeff(int i);
     float operator()(float s) const;
-    friend std::ostream& operator<<(std::ostream& os,  const float p);
     friend std::ostream& operator<<(std::ostream& os, const bezier& b);
 };
 
