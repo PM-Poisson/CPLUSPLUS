@@ -1,11 +1,32 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
+data = {}
 with open('data.m') as f:
-    for line in f:
-        curve = line.split('=')[0]
-        line = ''.join([x for x in line if x != '[' and x!=']'])
-        data = [ p.split(';')[:2] for p in line.split('=')[1].split(',')]
-        x = [float(point[0]) for point in data]
-        y = [float(point[1]) for point in data]
-        plt.plot(x, y, marker='o' if curve == 'polygon' else '', color='b' if curve == 'polygon' else 'r')
-    plt.show()
+    content = f.read()
+
+exec(content.replace(';', '\n'), data)
+
+curve = np.array(data['curve'])
+polygon = np.array(data['polygon'])
+
+dim = curve.shape[0]
+
+if dim == 1:
+    plt.plot(curve[0], 'r')
+    plt.plot(polygon[0], 'bo-')
+
+elif dim == 2:
+    plt.plot(curve[0], curve[1], 'r')
+    plt.plot(polygon[0], polygon[1], 'bo--')
+    plt.axis('equal')
+
+elif dim == 3:
+    from mpl_toolkits.mplot3d import Axes3D
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.plot(curve[0], curve[1], curve[2], 'r')
+    ax.plot(polygon[0], polygon[1], polygon[2], 'bo--')
+
+plt.title("Bezier Curve Viewer")
+plt.show()

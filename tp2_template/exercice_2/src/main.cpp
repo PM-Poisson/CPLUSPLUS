@@ -1,9 +1,10 @@
 #include <iostream>
 #include "bezier.hpp"
+#include "export_matlab.hpp"
+#include <cstdlib>
 
-/*==========================
-  Classe Vec2
-==========================*/
+
+/* ===== Vec2 ===== */
 
 struct Vec2 {
     float x, y;
@@ -12,30 +13,28 @@ struct Vec2 {
     Vec2(float x_, float y_) : x(x_), y(y_) {}
 };
 
-// Addition
-Vec2 operator+(const Vec2& a, const Vec2& b) {
+Vec2 operator+(const Vec2& a, const Vec2& b)
+{
     return Vec2(a.x + b.x, a.y + b.y);
 }
 
-// Multiplication scalaire (Vec2 * float)
-Vec2 operator*(const Vec2& v, float s) {
+Vec2 operator*(const Vec2& v, float s)
+{
     return Vec2(v.x * s, v.y * s);
 }
 
-// Multiplication scalaire (float * Vec2)
-Vec2 operator*(float s, const Vec2& v) {
+Vec2 operator*(float s, const Vec2& v)
+{
     return v * s;
 }
 
-// Affichage
-std::ostream& operator<<(std::ostream& os, const Vec2& v) {
-    os << "(" << v.x << ", " << v.y << ")";
+std::ostream& operator<<(std::ostream& os, const Vec2& v)
+{
+    os << v.x << " " << v.y;   // format plus simple pour Matlab
     return os;
 }
 
-/*==========================
-  Classe Vec3
-==========================*/
+/* ===== Vec3 ===== */
 
 struct Vec3 {
     double x, y, z;
@@ -45,75 +44,90 @@ struct Vec3 {
         : x(x_), y(y_), z(z_) {}
 };
 
-Vec3 operator+(const Vec3& a, const Vec3& b) {
+Vec3 operator+(const Vec3& a, const Vec3& b)
+{
     return Vec3(a.x + b.x,
                 a.y + b.y,
                 a.z + b.z);
 }
 
-Vec3 operator*(const Vec3& v, float s) {
+Vec3 operator*(const Vec3& v, float s)
+{
     return Vec3(v.x * s,
                 v.y * s,
                 v.z * s);
 }
 
-Vec3 operator*(float s, const Vec3& v) {
+Vec3 operator*(float s, const Vec3& v)
+{
     return v * s;
 }
 
-std::ostream& operator<<(std::ostream& os, const Vec3& v) {
-    os << "(" << v.x << ", "
-       << v.y << ", "
-       << v.z << ")";
+std::ostream& operator<<(std::ostream& os, const Vec3& v)
+{
+    os << v.x << " "
+       << v.y << " "
+       << v.z;
     return os;
 }
 
-/*==========================
-  MAIN
-==========================*/
+/* ===== MAIN ===== */
 
 int main()
 {
-    std::cout << "==== Test float ====\n";
+    std::cout << "=== Tests export Matlab ===\n";
+
     bezier<float> bf(0.0f, 1.0f, 2.0f, 3.0f);
-    std::cout << "Formule: " << bf << "\n";
-    std::cout << "b(0.5) = " << bf(0.5f) << "\n\n";
+    export_matlab(bf, "bezier_float.dat");
+    if (std::system("python3 ./viewer.py") != 0)
+    {    
+        std::cerr << "Erreur lancement viewer\n";
+    }
+    std::cout << "Export float OK\n";
 
-
-    std::cout << "==== Test double ====\n";
     bezier<double> bd(0.0, 2.0, 4.0, 6.0);
-    std::cout << "Formule: " << bd << "\n";
-    std::cout << "b(0.3) = " << bd(0.3f) << "\n\n";
+    export_matlab(bd, "bezier_double.dat");
+    if (std::system("python3 ./viewer.py") != 0)
+    {    
+        std::cerr << "Erreur lancement viewer\n";
+    }
+    std::cout << "Export double OK\n";
 
-
-    std::cout << "==== Test long double ====\n";
     bezier<long double> bld(0.0L, 1.0L, 1.0L, 0.0L);
-    std::cout << "Formule: " << bld << "\n";
-    std::cout << "b(0.7) = " << bld(0.7f) << "\n\n";
+    export_matlab(bld, "bezier_longdouble.dat");
+    if (std::system("python3 ./viewer.py") != 0)
+    {    
+        std::cerr << "Erreur lancement viewer\n";
+    }
+    std::cout << "Export long double OK\n";
 
-
-    std::cout << "==== Test Vec2 (2D) ====\n";
     bezier<Vec2> b2(
         Vec2(0,0),
         Vec2(1,2),
         Vec2(3,2),
         Vec2(4,0)
     );
+    export_matlab(b2, "bezier_vec2.dat");
+    if (std::system("python3 ./viewer.py") != 0)
+    {    
+        std::cerr << "Erreur lancement viewer\n";
+    }
+    std::cout << "Export Vec2 OK\n";
 
-    std::cout << "Formule: " << b2 << "\n";
-    std::cout << "b(0.5) = " << b2(0.5f) << "\n\n";
-
-
-    std::cout << "==== Test Vec3 (3D) ====\n";
     bezier<Vec3> b3(
         Vec3(0,0,0),
         Vec3(1,2,3),
         Vec3(4,5,6),
         Vec3(7,8,9)
     );
+    export_matlab(b3, "bezier_vec3.dat");
+    if (std::system("python3 ./viewer.py") != 0)
+    {    
+        std::cerr << "Erreur lancement viewer\n";
+    }
+    std::cout << "Export Vec3 OK\n";
 
-    std::cout << "Formule: " << b3 << "\n";
-    std::cout << "b(0.25) = " << b3(0.25f) << "\n";
+    std::cout << "Tous les exports sont terminés.\n";
 
     return 0;
 }
