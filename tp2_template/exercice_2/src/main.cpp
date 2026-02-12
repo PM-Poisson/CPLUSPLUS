@@ -6,9 +6,9 @@
 int main()
 {
     //Call empty constructor
-    bezier b0;
+    bezier<float> b0;
     //Build a bezier with control polygon given by [P0,P1,P2,P3]
-    bezier const b1(0.0f,1.0f,1.1f,0.15f);
+    bezier<float> const b1(0.0f,1.0f,1.1f,0.15f);
 
     float const P0 = b1.coeff(0); //get P0
     float const P1 = b1.coeff(1); //get P1
