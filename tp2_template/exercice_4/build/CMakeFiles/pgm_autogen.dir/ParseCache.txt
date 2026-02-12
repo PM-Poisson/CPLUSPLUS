@@ -345,6 +345,8 @@
  mmc:Q_OBJECT
  mdp:/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/moc_predefs.h
  mdp:/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/bezier.hpp
+ mdp:/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/circle.hpp
+ mdp:/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/geometrical_object.hpp
  mdp:/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/render_area.hpp
  mdp:/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/vec2.hpp
  mdp:/usr/include/asm-generic/errno-base.h
@@ -419,6 +421,7 @@
  mdp:/usr/include/c++/13/bits/shared_ptr.h
  mdp:/usr/include/c++/13/bits/shared_ptr_atomic.h
  mdp:/usr/include/c++/13/bits/shared_ptr_base.h
+ mdp:/usr/include/c++/13/bits/specfun.h
  mdp:/usr/include/c++/13/bits/std_abs.h
  mdp:/usr/include/c++/13/bits/std_function.h
  mdp:/usr/include/c++/13/bits/std_mutex.h
@@ -457,6 +460,7 @@
  mdp:/usr/include/c++/13/cerrno
  mdp:/usr/include/c++/13/climits
  mdp:/usr/include/c++/13/clocale
+ mdp:/usr/include/c++/13/cmath
  mdp:/usr/include/c++/13/compare
  mdp:/usr/include/c++/13/concepts
  mdp:/usr/include/c++/13/cstddef
@@ -499,6 +503,18 @@
  mdp:/usr/include/c++/13/streambuf
  mdp:/usr/include/c++/13/string
  mdp:/usr/include/c++/13/string_view
+ mdp:/usr/include/c++/13/tr1/bessel_function.tcc
+ mdp:/usr/include/c++/13/tr1/beta_function.tcc
+ mdp:/usr/include/c++/13/tr1/ell_integral.tcc
+ mdp:/usr/include/c++/13/tr1/exp_integral.tcc
+ mdp:/usr/include/c++/13/tr1/gamma.tcc
+ mdp:/usr/include/c++/13/tr1/hypergeometric.tcc
+ mdp:/usr/include/c++/13/tr1/legendre_function.tcc
+ mdp:/usr/include/c++/13/tr1/modified_bessel_func.tcc
+ mdp:/usr/include/c++/13/tr1/poly_hermite.tcc
+ mdp:/usr/include/c++/13/tr1/poly_laguerre.tcc
+ mdp:/usr/include/c++/13/tr1/riemann_zeta.tcc
+ mdp:/usr/include/c++/13/tr1/special_function_util.h
  mdp:/usr/include/c++/13/tuple
  mdp:/usr/include/c++/13/type_traits
  mdp:/usr/include/c++/13/typeinfo
@@ -589,14 +605,11 @@
  mdp:/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h
  mdp:/usr/include/x86_64-linux-gnu/gnu/stubs-64.h
  mdp:/usr/include/x86_64-linux-gnu/gnu/stubs.h
- mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/QTime
- mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h
- mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h
@@ -605,7 +618,6 @@
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h
- mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h
@@ -645,7 +657,6 @@
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h
- mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
@@ -683,5 +694,7 @@
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
+/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/geometrical_object.hpp
 /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/bezier_drawer.hpp
 /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/bezier.hpp
+/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/circle.hpp

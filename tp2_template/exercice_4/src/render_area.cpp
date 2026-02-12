@@ -1,147 +1,157 @@
-
 #include "render_area.hpp"
-
 #include "bezier_drawer.hpp"
 
 #include <QPainter>
 #include <QMouseEvent>
-#include <QLabel>
-
-
+#include <limits>
 #include <iostream>
 
-
-/** Get the index of the closest point of the control polygon of the click
-  *  if the distance is less than some threshold. Otherwise return -1.
-  *
-  * INPUT:
-  *  - The Bezier curve with its control polygon.
-  *  - The position of the click.
-  * OUTPUT:
-  *  - An index >=0 of the closest control point of the Bezier curve if the distance
-  *     is less than some threshold.
-  *  - -1 if there is no point of the control polygon close enough of the click.
-*/
-static int select_point(bezier<vec2> const& curve,vec2 const& click);
-
-
 render_area::render_area(QWidget *parent)
-    :QWidget(parent),curve(),selected_point(-1),click_previous()
+    : QWidget(parent), selected_point(-1), mouse_pos(-1,-1)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
 
-    curve=bezier<vec2>(
-    {150.0f,100.0f},
-    {250.0f,300.0f},
-    {450.0f,350.0f},
-    {550.0f,180.0f});
+    // Création d'une Bézier
+    auto b = std::make_shared<bezier<vec2>>(
+        vec2(150,100),
+        vec2(250,300),
+        vec2(450,350),
+        vec2(550,180)
+    );
+    scene.push_back(b);
+
+    // Création d'un cercle
+    auto c = std::make_shared<circle>(vec2(400,300), 50.0f);
+    scene.push_back(c);
+
+    closest_point_mouse = vec2(-1,-1);
 }
 
-render_area::~render_area()
-{}
-
-
+render_area::~render_area() {}
 
 void render_area::paintEvent(QPaintEvent*)
 {
-    //Initialize painters
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QBrush brush = painter.brush();
+    QPen pen;
+    QBrush brush;
     brush.setColor(Qt::gray);
     brush.setStyle(Qt::SolidPattern);
     painter.setBrush(brush);
 
-    QPen pen;
-
-    //draw the bezier curve
-    pen.setWidth(2.0);
-    pen.setColor(Qt::blue);
-    painter.setPen(pen);
-    draw(painter,curve);
-
-    //draw the control polygon
-    pen.setWidth(1.0);
-    pen.setColor(Qt::black);
-    painter.setPen(pen);
-    draw_control_polygon(painter,curve);
-
-    //draw the control points
-    pen.setWidth(5.0);
-    for(int k=0;k<4;++k)
+    // Tracer tous les objets polymorphes
+    for(auto const& obj : scene)
     {
-        if(k==selected_point)
-            pen.setColor(Qt::yellow);
-        else
-            pen.setColor(Qt::red);
-        painter.setPen(pen);
+        if(auto b = std::dynamic_pointer_cast<bezier<vec2>>(obj))
+        {
+            pen.setWidth(2); pen.setColor(Qt::blue); painter.setPen(pen);
+            draw(painter,*b);
 
-        draw_control_point(painter,curve,k);
+            pen.setWidth(1); pen.setColor(Qt::black); painter.setPen(pen);
+            draw_control_polygon(painter,*b);
+
+            pen.setWidth(5);
+            for(int k=0;k<4;++k)
+            {
+                pen.setColor(k==selected_point ? Qt::yellow : Qt::red);
+                painter.setPen(pen);
+                draw_control_point(painter,*b,k);
+            }
+        }
+        else if(auto c = std::dynamic_pointer_cast<circle>(obj))
+        {
+            pen.setWidth(2); pen.setColor(Qt::green); painter.setPen(pen);
+            const int N = 100;
+            for(int i=0;i<N;++i)
+            {
+                vec2 p0 = (*c)(float(i)/N);
+                vec2 p1 = (*c)(float(i+1)/N);
+                painter.drawLine(p0.x,p0.y,p1.x,p1.y);
+            }
+        }
     }
 
-
-
+    // Tracer le segment vers le point le plus proche de la souris
+    if(closest_point_mouse.x >= 0)
+    {
+        pen.setWidth(2); pen.setColor(Qt::red);
+        painter.setPen(pen);
+        painter.drawLine(mouse_pos.x, mouse_pos.y,
+                         closest_point_mouse.x, closest_point_mouse.y);
+    }
 }
-
-
-
 
 void render_area::mouseMoveEvent(QMouseEvent *event)
 {
-    vec2 const click=vec2(event->x(),event->y());
+    mouse_pos = vec2(event->x(), event->y());
 
-    //translate the control point
-    if(selected_point!=-1)
+    // Déplacement du point de contrôle Bézier
+    if(selected_point != -1)
     {
-        vec2 translation=click-click_previous;
-        curve.coeff(selected_point) += translation;
+        vec2 translation = mouse_pos - click_previous;
+
+        for(auto const& obj : scene)
+        {
+            if(auto b = std::dynamic_pointer_cast<bezier<vec2>>(obj))
+            {
+                b->coeff(selected_point) += translation;
+                break;
+            }
+        }
     }
-    click_previous=click;
+
+    click_previous = mouse_pos;
+
+    // Calcul du point le plus proche
+    float min_dist = std::numeric_limits<float>::max();
+    for(auto const& obj : scene)
+    {
+        vec2 pt = obj->closest_point(mouse_pos);
+        float d = norm(pt - mouse_pos);
+        if(d < min_dist)
+        {
+            min_dist = d;
+            closest_point_mouse = pt;
+        }
+    }
 
     repaint();
 }
 
 void render_area::mousePressEvent(QMouseEvent *event)
 {
-    vec2 const click=vec2(event->x(),event->y());
+    mouse_pos = vec2(event->x(), event->y());
+    selected_point = -1;
 
-    //select a control point
-    selected_point=select_point(curve,click);
-
-    click_previous=click;
-    repaint();
-}
-
-
-static int select_point(bezier<vec2> const& curve,vec2 const& click)
-{
-    //the minimal distance to be considered as clicked
-    float const threshold=25;
-
-    float distance_min=-1.0f;
-    int index_distance_min=-1;
-
-    //get the minimal distance
-    for(int k=0;k<4;++k)
+    // Vérification pour sélection d'un point Bézier
+    for(auto const& obj : scene)
     {
-        vec2 const& point=curve.coeff(k);
-        float const distance=norm(point-click);
-
-        if(k==0 || distance<distance_min)
+        if(auto b = std::dynamic_pointer_cast<bezier<vec2>>(obj))
         {
-            distance_min=distance;
-            index_distance_min=k;
+            selected_point = select_control_point(*b, mouse_pos);
+            if(selected_point != -1) break;
         }
     }
 
-    if(distance_min<=threshold)
-        return index_distance_min;
-    else
-        return -1;
+    click_previous = mouse_pos;
+    repaint();
 }
 
-
-
-
+int render_area::select_control_point(bezier<vec2> const& curve, vec2 const& click)
+{
+    const float threshold = 25.0f;
+    float min_dist = -1.0f;
+    int idx = -1;
+    for(int k=0;k<4;++k)
+    {
+        float d = norm(curve.coeff(k) - click);
+        if(k==0 || d < min_dist)
+        {
+            min_dist = d;
+            idx = k;
+        }
+    }
+    return min_dist <= threshold ? idx : -1;
+}

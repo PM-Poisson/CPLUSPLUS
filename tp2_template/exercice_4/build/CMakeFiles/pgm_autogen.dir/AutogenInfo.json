@@ -92,6 +92,18 @@
 			null
 		],
 		[
+			"/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/circle.hpp",
+			"MU",
+			"UVLADIE3JM/moc_circle.cpp",
+			null
+		],
+		[
+			"/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/geometrical_object.hpp",
+			"MU",
+			"UVLADIE3JM/moc_geometrical_object.cpp",
+			null
+		],
+		[
 			"/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/render_area.hpp",
 			"MU",
 			"UVLADIE3JM/moc_render_area.cpp",

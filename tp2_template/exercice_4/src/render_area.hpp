@@ -1,55 +1,44 @@
 #pragma once
-
 #ifndef RENDER_AREA_HPP
 #define RENDER_AREA_HPP
 
-
 #include <QWidget>
-#include <QTimer>
-#include <QTime>
-#include <list>
-
+#include <vector>
+#include <memory>
 
 #include "vec2.hpp"
 #include "bezier.hpp"
-
-//forward declaration of QLabel
-class QLabel;
-
-
+#include "circle.hpp"
+#include "geometrical_object.hpp"
 
 class render_area : public QWidget
 {
     Q_OBJECT
 public:
-
-    render_area(QWidget *parent = 0);
+    render_area(QWidget *parent = nullptr);
     ~render_area();
 
-
-
 protected:
-    /** Actual drawing function */
-    void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 
-    /** Function called when the mouse is pressed */
-    void mousePressEvent(QMouseEvent *event);
-    /** Function called when the mouse is moved */
-    void mouseMoveEvent(QMouseEvent *event);
+private:
+    // Scene polymorphe
+    std::vector<std::shared_ptr<geometrical_object>> scene;
 
+    // Point le plus proche de la souris
+    vec2 closest_point_mouse;
 
-private: //attributes
+    // Position de la souris
+    vec2 mouse_pos;
 
-    /** The Bezier curve */
-    bezier<vec2> curve;
-
-    /** The selected vertex of the control polygon (-1 if none is selected) */
+    // Sélection de point de contrôle (pour Bézier)
     int selected_point;
-
-    /** The previously cliked position*/
     vec2 click_previous;
 
-
+    // Méthode helper pour sélectionner un point dans une Bézier
+    static int select_control_point(bezier<vec2> const& curve, vec2 const& click);
 };
 
 #endif
