@@ -277,11 +277,6 @@ CMakeFiles/pgm.dir/src/window.cpp.o: \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/render_area.hpp \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QTime \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/vec2.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/basic_ios.h \
@@ -294,6 +289,18 @@ CMakeFiles/pgm.dir/src/window.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/bezier.hpp \
+ /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/geometrical_object.hpp \
+ /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/circle.hpp \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/include/ui_mainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \

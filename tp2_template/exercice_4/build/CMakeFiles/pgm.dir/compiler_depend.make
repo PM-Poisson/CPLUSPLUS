@@ -879,6 +879,7 @@ CMakeFiles/pgm.dir/src/bezier_drawer.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Docu
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/chrono \
   /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
@@ -930,6 +931,7 @@ CMakeFiles/pgm.dir/src/bezier_drawer.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Docu
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
+  /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -950,10 +952,19 @@ CMakeFiles/pgm.dir/src/bezier_drawer.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Docu
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
@@ -1993,6 +2004,8 @@ CMakeFiles/pgm.dir/src/vec2.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE
 CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/window.cpp \
   pgm_autogen/include/ui_mainwindow.h \
   /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/bezier.hpp \
+  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/circle.hpp \
+  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/geometrical_object.hpp \
   /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/render_area.hpp \
   /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/vec2.hpp \
   /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/window.hpp \
@@ -2090,6 +2103,7 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/chrono \
   /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
@@ -2141,6 +2155,7 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
+  /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -2161,10 +2176,19 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
@@ -2232,15 +2256,12 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTime \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
@@ -2251,7 +2272,6 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
@@ -2294,7 +2314,6 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
@@ -2375,15 +2394,9 @@ CMakeFiles/pgm.dir/src/window.cpp.o: /mnt/c/Users/Paul-Malo/OneDrive/Documents/C
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h:
-
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QTime:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent:
 
@@ -2654,8 +2667,6 @@ pgm_autogen/UVLADIE3JM/moc_render_area.cpp:
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
 
@@ -3154,8 +3165,6 @@ pgm_autogen/mocs_compilation.cpp:
 /usr/include/c++/13/memory:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
 

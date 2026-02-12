@@ -280,6 +280,7 @@ CMakeFiles/pgm.dir/pgm_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/UVLADIE3JM/../../../src/bezier.hpp \
+ /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/UVLADIE3JM/../../../src/geometrical_object.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -291,7 +292,6 @@ CMakeFiles/pgm.dir/pgm_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/UVLADIE3JM/../../../src/circle.hpp \
- /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/UVLADIE3JM/../../../src/geometrical_object.hpp \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/UVLADIE3JM/moc_window.cpp \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/build/pgm_autogen/UVLADIE3JM/../../../src/window.hpp \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \

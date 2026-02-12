@@ -3,7 +3,8 @@
 #define CIRCLE_HPP
 
 #include "vec2.hpp"
-#include "bezier.hpp" // pour la classe géométrique de base
+#include "geometrical_object.hpp"
+
 #include <cmath>
 #include <ostream>
 

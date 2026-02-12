@@ -25,6 +25,14 @@ render_area::render_area(QWidget *parent)
     auto c = std::make_shared<circle>(vec2(400,300), 50.0f);
     scene.push_back(c);
 
+    // Création d'un cercle
+    auto c2 = std::make_shared<circle>(vec2(200,750), 90.0f);
+    scene.push_back(c2);
+
+    // Création d'un cercle
+    auto c3 = std::make_shared<circle>(vec2(680,100), 50.0f);
+    scene.push_back(c3);
+
     closest_point_mouse = vec2(-1,-1);
 }
 

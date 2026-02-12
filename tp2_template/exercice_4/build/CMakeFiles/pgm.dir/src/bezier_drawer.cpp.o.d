@@ -149,7 +149,21 @@ CMakeFiles/pgm.dir/src/bezier_drawer.cpp.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/bezier.hpp \
  /mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/tp2_template/exercice_4/src/geometrical_object.hpp \
- /usr/include/c++/13/limits \
+ /usr/include/c++/13/limits /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
@@ -161,11 +175,6 @@ CMakeFiles/pgm.dir/src/bezier_drawer.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \

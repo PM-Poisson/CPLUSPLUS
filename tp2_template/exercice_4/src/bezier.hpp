@@ -3,22 +3,12 @@
 #define BEZIER_HPP
 
 #include "vec2.hpp"
+#include "geometrical_object.hpp"
+
 #include <ostream>
 #include <limits>
 #include <cmath>
 #include <algorithm>
-
-// Classe parente pour le polymorphisme
-class geometrical_object {
-public:
-    virtual ~geometrical_object() = default;
-
-    // Renvoie le point le plus proche d'une position p
-    virtual vec2 closest_point(const vec2& p) const = 0;
-
-    // Évalue un point suivant un paramètre s (0..1)
-    virtual vec2 operator()(float s) const = 0;
-};
 
 template<typename T>
 class bezier : public geometrical_object {
