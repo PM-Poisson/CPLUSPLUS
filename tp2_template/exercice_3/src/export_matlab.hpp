@@ -1,47 +1,49 @@
 #pragma once
-
 #ifndef EXPORT_MATLAB_HPP
 #define EXPORT_MATLAB_HPP
 
-#include <string>
-#include <iostream>
 #include <fstream>
-
+#include <vector>
+#include <string>
 #include "bezier.hpp"
+#include "vec2.hpp"
 
-/** Export a scalar bezier curve into a Matlab compatible file */
-void export_matlab(const std::string& filename,const bezier<float>& b,int sample=100);
+/**
+ * Export a Bézier curve to MATLAB.
+ * Works for any T (vec2) and any degree N at compile time.
+ */
+template<typename T, int N>
+void export_matlab(const std::string& filename, const bezier<T, N>& curve, int N_sample = 100) {
+    std::ofstream ofs(filename);
+    if(!ofs.is_open())
+        throw std::runtime_error("Cannot open file: " + filename);
 
-/** Export a vectorial bezier curve into a Matlab compatible file */
-template <typename T>
-void export_matlab(const std::string& filename,const bezier<T>& b,int sample=100)
-{
-    if(sample<1 || sample>50000)
-        throw std::exception();
-
-    std::ofstream ofs;
-    ofs.open(filename.c_str());
-
-    if(ofs.good()==false)
-        throw std::exception();
-
-    ofs<<"polygon=["<<b.coeff(0)<<","<<b.coeff(1)<<","<<b.coeff(2)<<","<<b.coeff(3)<<"];"<<std::endl;
-
-    ofs<<"curve=[";
-    for(int k=0;k<sample;++k)
-    {
-        float const s = static_cast<float>(k)/(sample-1);
-        T const y = b(s);
-
-        ofs<<y;
-        if(k<sample-1)
-            ofs<<",";
+    // Compute N_sample points along the curve
+    std::vector<T> points(N_sample);
+    for(int i=0; i<N_sample; ++i) {
+        float s = float(i)/(N_sample-1);
+        points[i] = curve(s);
     }
-    ofs<<"];";
 
-    ofs.close();
+    // Write x and y coordinates
+    ofs << "curve = [\n";
+    for(int dim=0; dim<2; ++dim) {
+        for(int i=0; i<N_sample; ++i) {
+            ofs << (dim==0 ? points[i].x : points[i].y) << " ";
+        }
+        ofs << ";\n";
+    }
+    ofs << "];\n";
+
+    // Write control polygon
+    ofs << "polygon = [\n";
+    for(int dim=0; dim<2; ++dim) {
+        for(int k=0; k<=N; ++k) {
+            ofs << (dim==0 ? curve.coeff(k).x : curve.coeff(k).y) << " ";
+        }
+        ofs << ";\n";
+    }
+    ofs << "];\n";
 }
-
-
 
 #endif
