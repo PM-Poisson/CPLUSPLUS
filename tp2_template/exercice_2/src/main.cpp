@@ -1,54 +1,119 @@
-
-#include "bezier.hpp"
 #include <iostream>
-#include "export_matlab.hpp"
+#include "bezier.hpp"
+
+/*==========================
+  Classe Vec2
+==========================*/
+
+struct Vec2 {
+    float x, y;
+
+    Vec2() : x(0), y(0) {}
+    Vec2(float x_, float y_) : x(x_), y(y_) {}
+};
+
+// Addition
+Vec2 operator+(const Vec2& a, const Vec2& b) {
+    return Vec2(a.x + b.x, a.y + b.y);
+}
+
+// Multiplication scalaire (Vec2 * float)
+Vec2 operator*(const Vec2& v, float s) {
+    return Vec2(v.x * s, v.y * s);
+}
+
+// Multiplication scalaire (float * Vec2)
+Vec2 operator*(float s, const Vec2& v) {
+    return v * s;
+}
+
+// Affichage
+std::ostream& operator<<(std::ostream& os, const Vec2& v) {
+    os << "(" << v.x << ", " << v.y << ")";
+    return os;
+}
+
+/*==========================
+  Classe Vec3
+==========================*/
+
+struct Vec3 {
+    double x, y, z;
+
+    Vec3() : x(0), y(0), z(0) {}
+    Vec3(double x_, double y_, double z_)
+        : x(x_), y(y_), z(z_) {}
+};
+
+Vec3 operator+(const Vec3& a, const Vec3& b) {
+    return Vec3(a.x + b.x,
+                a.y + b.y,
+                a.z + b.z);
+}
+
+Vec3 operator*(const Vec3& v, float s) {
+    return Vec3(v.x * s,
+                v.y * s,
+                v.z * s);
+}
+
+Vec3 operator*(float s, const Vec3& v) {
+    return v * s;
+}
+
+std::ostream& operator<<(std::ostream& os, const Vec3& v) {
+    os << "(" << v.x << ", "
+       << v.y << ", "
+       << v.z << ")";
+    return os;
+}
+
+/*==========================
+  MAIN
+==========================*/
 
 int main()
 {
-    //Call empty constructor
-    bezier<float> b0;
-    //Build a bezier with control polygon given by [P0,P1,P2,P3]
-    bezier<float> const b1(0.0f,1.0f,1.1f,0.15f);
+    std::cout << "==== Test float ====\n";
+    bezier<float> bf(0.0f, 1.0f, 2.0f, 3.0f);
+    std::cout << "Formule: " << bf << "\n";
+    std::cout << "b(0.5) = " << bf(0.5f) << "\n\n";
 
-    float const P0 = b1.coeff(0); //get P0
-    float const P1 = b1.coeff(1); //get P1
 
-    std::cout<< P0 <<std::endl; //should print 0
-    std::cout<< P1 <<std::endl; //should print 1
+    std::cout << "==== Test double ====\n";
+    bezier<double> bd(0.0, 2.0, 4.0, 6.0);
+    std::cout << "Formule: " << bd << "\n";
+    std::cout << "b(0.3) = " << bd(0.3f) << "\n\n";
 
-    //set Bezier coefficient for b0
-    b0.coeff(0) = 0.0f;
-    b0.coeff(1) = 0.4f;
-    b0.coeff(2) = 0.6f;
-    b0.coeff(3) = 0.2f;
 
-    //Should print on the command line
-    // (1-s)^3*0+3s(1-s)^2*1+3s^2(1-s)*1.1+s^3*0.15
-    std::cout<< b1 <<std::endl;
+    std::cout << "==== Test long double ====\n";
+    bezier<long double> bld(0.0L, 1.0L, 1.0L, 0.0L);
+    std::cout << "Formule: " << bld << "\n";
+    std::cout << "b(0.7) = " << bld(0.7f) << "\n\n";
 
-    //Should print on the command line
-    // (1-s)^3*0+3s(1-s)^2*0.4+3s^2(1-s)*0.6+s^3*0.2
-    std::cout<< b0 <<std::endl;
 
-    //Number of samples of the Bezier curve
-    int const N_sample=10;
-    for(int k=0; k<N_sample; ++k)
-    {
-        //s is the parameter of the Bezier curve
-        // s spans the interval [0,1] with N_sample samples.
-        float const s = k/(N_sample-1.0f);
+    std::cout << "==== Test Vec2 (2D) ====\n";
+    bezier<Vec2> b2(
+        Vec2(0,0),
+        Vec2(1,2),
+        Vec2(3,2),
+        Vec2(4,0)
+    );
 
-        //Compute the value of the Bezier curve b1(s)
-        float const value = b1(s);
+    std::cout << "Formule: " << b2 << "\n";
+    std::cout << "b(0.5) = " << b2(0.5f) << "\n\n";
 
-        //Print all the values.
-        // Check specificaly that
-        //  value=P0 when s=0
-        //  value=P3 when s=1
-        std::cout<<k<<" : "<<value<<std::endl;
-    }
 
-    export_matlab("data.m",b1, 1000);
+    std::cout << "==== Test Vec3 (3D) ====\n";
+    bezier<Vec3> b3(
+        Vec3(0,0,0),
+        Vec3(1,2,3),
+        Vec3(4,5,6),
+        Vec3(7,8,9)
+    );
+
+    std::cout << "Formule: " << b3 << "\n";
+    std::cout << "b(0.25) = " << b3(0.25f) << "\n";
 
     return 0;
 }

@@ -66,11 +66,4 @@ public:
     }
 };
 
-// Pour que Bezier<Vec2> fonctionne, Vec2 doit avoir :
-class Vec2 {
-public:
-    Vec2 operator+(const Vec2& other) const; // Addition
-    Vec2 operator*(double scalar) const; // Multiplication scalaire
-};
-
 #endif
