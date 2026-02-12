@@ -1,14 +1,32 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import re
 
-data = {}
-with open('data.m') as f:
+def read_matrix(content, name):
+    pattern = rf"{name}\s*=\s*\[(.*?)\];"
+    match = re.search(pattern, content, re.S)
+    if not match:
+        return None
+
+    block = match.group(1).strip()
+    rows = block.split(';')
+    matrix = []
+
+    for row in rows:
+        row = row.strip()
+        if row:
+            matrix.append([float(x) for x in row.split()])
+
+    return np.array(matrix)
+
+with open("data.m") as f:
     content = f.read()
 
-exec(content.replace(';', '\n'), data)
+curve = read_matrix(content, "curve")
+polygon = read_matrix(content, "polygon")
 
-curve = np.array(data['curve'])
-polygon = np.array(data['polygon'])
+if curve is None or polygon is None:
+    raise RuntimeError("Impossible de lire data.m")
 
 dim = curve.shape[0]
 

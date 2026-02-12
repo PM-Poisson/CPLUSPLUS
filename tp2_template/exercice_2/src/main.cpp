@@ -78,7 +78,7 @@ int main()
     std::cout << "=== Tests export Matlab ===\n";
 
     bezier<float> bf(0.0f, 1.0f, 2.0f, 3.0f);
-    export_matlab(bf, "bezier_float.dat");
+    export_matlab(bf, "data.m");
     if (std::system("python3 ./viewer.py") != 0)
     {    
         std::cerr << "Erreur lancement viewer\n";
@@ -86,7 +86,7 @@ int main()
     std::cout << "Export float OK\n";
 
     bezier<double> bd(0.0, 2.0, 4.0, 6.0);
-    export_matlab(bd, "bezier_double.dat");
+    export_matlab(bd, "data.m");
     if (std::system("python3 ./viewer.py") != 0)
     {    
         std::cerr << "Erreur lancement viewer\n";
@@ -94,7 +94,7 @@ int main()
     std::cout << "Export double OK\n";
 
     bezier<long double> bld(0.0L, 1.0L, 1.0L, 0.0L);
-    export_matlab(bld, "bezier_longdouble.dat");
+    export_matlab(bld, "data.m");
     if (std::system("python3 ./viewer.py") != 0)
     {    
         std::cerr << "Erreur lancement viewer\n";
@@ -107,7 +107,7 @@ int main()
         Vec2(3,2),
         Vec2(4,0)
     );
-    export_matlab(b2, "bezier_vec2.dat");
+    export_matlab(b2, "data.m");
     if (std::system("python3 ./viewer.py") != 0)
     {    
         std::cerr << "Erreur lancement viewer\n";
@@ -120,7 +120,7 @@ int main()
         Vec3(4,5,6),
         Vec3(7,8,9)
     );
-    export_matlab(b3, "bezier_vec3.dat");
+    export_matlab(b3, "data.m");
     if (std::system("python3 ./viewer.py") != 0)
     {    
         std::cerr << "Erreur lancement viewer\n";
