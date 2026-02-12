@@ -21,7 +21,7 @@ float& bezier::coeff(int i)
 {
     if(i<0 || i>3)
         throw std::exception();
-    return const_cast<float&>(P[i]);
+    return (P[i]);
 }
 
 float bezier::operator()(float s) const
