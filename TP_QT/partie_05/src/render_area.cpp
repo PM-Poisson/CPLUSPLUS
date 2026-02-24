@@ -6,12 +6,13 @@
 #include <QPixmap>
 #include <QPainter>
 
+//Constructor and destructor of the render_area class
 render_area::render_area(QWidget *parent)
     :QWidget(parent),pixmap(new QPixmap),draw_circle(true)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-
+    pixmap->load("./barba.png");
 }
 
 render_area::~render_area()
@@ -23,12 +24,13 @@ render_area::~render_area()
 	}
 }
 
-
+//The paintEvent is called each time the render_area widget needs to be redrawn
 void render_area::paintEvent(QPaintEvent*)
 {
     //A painter class able to draw in 2D
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
+    
 
     //The drawing pen with its properties
     QPen pen;
@@ -43,9 +45,11 @@ void render_area::paintEvent(QPaintEvent*)
     painter.setBrush(brush);
 
     //if draw_circle is true, then we draw an ellipsoid
-    if(draw_circle)
+    if(draw_circle) {
         painter.drawEllipse(200,100,200,100);
-
+        *pixmap = pixmap->scaled(1000,1000);
+        painter.drawPixmap(50,50,*pixmap);
+    }
 }
 
 

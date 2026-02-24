@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>758</width>
-    <height>475</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,8 +32,8 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>721</width>
-      <height>351</height>
+      <width>1880</width>
+      <height>1040</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="layout_scene"/>
