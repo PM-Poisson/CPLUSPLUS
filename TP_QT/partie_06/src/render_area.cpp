@@ -30,7 +30,7 @@ void render_area::paintEvent(QPaintEvent*)
     //A painter class able to draw in 2D
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-
+    
     //The drawing pen with its properties
     QPen pen;
     pen.setWidth(4.0);

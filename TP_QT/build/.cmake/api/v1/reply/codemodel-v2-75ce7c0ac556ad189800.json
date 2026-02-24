@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.7.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "main",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "pgm::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pgm-debug-7eec62d4e59f6dc78b37.json",
+					"name" : "pgm",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pgm_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pgm_autogen-debug-0ec0b48f4a2318618977.json",
+					"name" : "pgm_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pgm_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pgm_autogen_timestamp_deps-debug-7afff2f5febb0c6e9530.json",
+					"name" : "pgm_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/TP_QT/build",
+		"source" : "/mnt/c/Users/Paul-Malo/OneDrive/Documents/CPE/MAJEURE/env_virtuel/CPLUSPLUS/TP_QT/partie_06"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
