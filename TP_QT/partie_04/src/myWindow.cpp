@@ -42,6 +42,7 @@ void myWindow::actionCheckBox2()
 }
 void myWindow::actionButton1()
 {
+    ui->label->setText(ui->lineEdit->text());
     std::cout<<"Button 1 click"<<std::endl;
 }
 void myWindow::actionButton2()

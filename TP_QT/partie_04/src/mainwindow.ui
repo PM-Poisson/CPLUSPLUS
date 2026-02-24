@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>442</width>
+    <width>558</width>
     <height>310</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="Button_5">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>230</y>
+      <x>60</x>
+      <y>220</y>
       <width>92</width>
       <height>27</height>
      </rect>
@@ -31,30 +31,58 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
+      <y>10</y>
       <width>251</width>
-      <height>151</height>
+      <height>171</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
+     <item row="0" column="1">
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="text">
+        <string>checkbox 2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
       <widget class="QCheckBox" name="checkBox">
        <property name="text">
         <string>checkbox 1</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QPushButton" name="Button_1">
        <property name="text">
         <string>bouton 1</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QCheckBox" name="checkBox_2">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>checkbox 2</string>
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QRadioButton" name="radioButton">
+       <property name="text">
+        <string>RadioButton</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="text">
+        <string>RadioButton</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QCheckBox" name="checkBox_3">
+       <property name="text">
+        <string>CheckBox</string>
        </property>
       </widget>
      </item>
@@ -63,8 +91,8 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>20</y>
+      <x>310</x>
+      <y>30</y>
       <width>151</width>
       <height>151</height>
      </rect>
@@ -96,8 +124,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>180</y>
+      <x>390</x>
+      <y>220</y>
       <width>59</width>
       <height>15</height>
      </rect>
@@ -109,8 +137,8 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>230</y>
+      <x>210</x>
+      <y>220</y>
       <width>113</width>
       <height>25</height>
      </rect>
@@ -119,14 +147,27 @@
      <string>pour ecrire</string>
     </property>
    </widget>
+   <widget class="QSlider" name="verticalSlider">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>40</y>
+      <width>16</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>442</width>
-     <height>23</height>
+     <width>558</width>
+     <height>19</height>
     </rect>
    </property>
   </widget>
