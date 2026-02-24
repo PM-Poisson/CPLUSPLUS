@@ -65,7 +65,7 @@ void render_area::mousePressEvent(QMouseEvent *event)
 void render_area::mouseDoubleClickEvent(QMouseEvent *event)
 {
     //when a double click occurs, the circle change color
-    color = Qt::blue
+    
     repaint();
 }
 
