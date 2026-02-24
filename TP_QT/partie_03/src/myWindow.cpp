@@ -15,6 +15,7 @@ myWindow::myWindow(QWidget *parent)
     quitButton = new QPushButton("Quit");
     checkBox1  = new QCheckBox(QString("select option 1"));
     checkBox2  = new QCheckBox(QString("select option 2"));
+    bothButtons = new QPushButton("select both");
 
     //Create the grid layout
     mainLayout = new QGridLayout;
@@ -23,11 +24,13 @@ myWindow::myWindow(QWidget *parent)
     mainLayout->addWidget(checkBox1,0,1);
     mainLayout->addWidget(checkBox2,0,2);
     mainLayout->addWidget(quitButton,1,3);
+    mainLayout->addWidget(bothButtons,1,1,1,2);
 
     //Manage signals and slots
     // = setup the links between the click on a button and the call of a function
     connect(quitButton,SIGNAL(clicked()),this,SLOT(quitWindow()) );
     connect(checkBox1 ,SIGNAL(clicked()),this,SLOT(clickButton()));
+    connect(bothButtons,SIGNAL(clicked()),this,SLOT(clickBothButtons()));
     connect(checkBox2 ,SIGNAL(clicked()),this,SLOT(clickButton()));
 
     //Add the layout to the current window
@@ -51,3 +54,9 @@ void myWindow::clickButton()
     std::cout<<"Click on a button, new current state: ("<<checkBox1->isChecked()<<","<<checkBox2->isChecked()<<")"<<std::endl;
 }
 
+void myWindow::clickBothButtons()
+{
+    checkBox1->setChecked(true);
+    checkBox2->setChecked(true);
+    std::cout<<"Click on both buttons, new current state: ("<<checkBox1->isChecked()<<","<<checkBox2->isChecked()<<")"<<std::endl;
+}
