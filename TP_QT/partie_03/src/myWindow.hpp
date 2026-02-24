@@ -28,10 +28,13 @@ private slots:
     void quitWindow();
     /** Print info about the buttons */
     void clickButton();
+    /** Click on both buttons */
+    void clickBothButtons();
 
 private:
 
     QPushButton *quitButton;
+    QPushButton *bothButtons;
     QCheckBox   *checkBox1;
     QCheckBox   *checkBox2;
     QGridLayout *mainLayout;
