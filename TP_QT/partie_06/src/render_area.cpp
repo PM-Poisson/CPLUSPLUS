@@ -63,6 +63,13 @@ void render_area::mousePressEvent(QMouseEvent *event)
     y_old=event->y();
 }
 
+void render_area::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    //when a double click occurs, the circle change color
+    
+    repaint();
+}
+
 void render_area::mouseMoveEvent(QMouseEvent *event)
 {
     //get the current mouse position

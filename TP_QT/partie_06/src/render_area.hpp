@@ -30,6 +30,8 @@ protected:
     void paintEvent(QPaintEvent *event);
     /** Function called when the mouse is pressed */
     void mousePressEvent(QMouseEvent *event);
+    /** Function called when the mouse is double clicked */
+    void mouseDoubleClickEvent(QMouseEvent *event);
     /** Function called when the mouse is moved */
     void mouseMoveEvent(QMouseEvent *event);
 
