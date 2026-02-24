@@ -42,6 +42,7 @@ private:
     /** A boolean indicating if a circle should be drawn or not */
     bool draw_circle;
 
+    Qt::GlobalColor
     /** Storage for the previous position of the mouse */
     int x_old,y_old;
     /** Current parameter of the circle
