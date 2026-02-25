@@ -78,50 +78,50 @@ void render_area::numerical_integration()
     p     = p+dt*speed;               //integrate position
 
     //collision handling (set new position, and return a new speed value)
-    speed=collision_handling(p);
+    //speed=collision_handling(p);
 }
 
-vec2 render_area::collision_handling(vec2& p)
-{
-    vec2 new_speed=speed;
+// vec2 render_area::collision_handling(vec2& p)
+// {
+//     vec2 new_speed=speed;
 
-    //size of the window
-    float const h = height();
-    float const w = width();
+//     //size of the window
+//     float const h = height();
+//     float const w = width();
 
-    //radius of the sphere
-    float const r = circ.radius;
+//     //radius of the sphere
+//     float const r = circ.radius;
 
-    //collision with the ground
-    if( p.y+r>h )
-    {
-        p.y=h-r;
-        new_speed.y *= -1;
-    }
-    //collision with the left wall
-    if( p.x-r<0 )
-    {
-        p.x=r;
-        new_speed.x *= -1;
-    }
-    //collision with the right wall
-    if( p.x+r>w )
-    {
-        p.x=w-r;
-        new_speed.x *= -1;
-    }
-    //collision with the top wall
-    if( p.y-r<0 )
-    {
-        p.y=r;
-        new_speed.y *= -1;
-    }
+//     //collision with the ground
+//     if( p.y+r>h )
+//     {
+//         p.y=h-r;
+//         new_speed.y *= -1;
+//     }
+//     //collision with the left wall
+//     if( p.x-r<0 )
+//     {
+//         p.x=r;
+//         new_speed.x *= -1;
+//     }
+//     //collision with the right wall
+//     if( p.x+r>w )
+//     {
+//         p.x=w-r;
+//         new_speed.x *= -1;
+//     }
+//     //collision with the top wall
+//     if( p.y-r<0 )
+//     {
+//         p.y=r;
+//         new_speed.y *= -1;
+//     }
 
 
 
-    return new_speed;
+//     return new_speed;
 
-}
+// }
 
 
 void render_area::change_draw_circle_state()
