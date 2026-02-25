@@ -6,6 +6,9 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QMouseEvent>
+#include <QPen>
+#include <QBrush>
+#include <QColorDialog>
 
 
 render_area::render_area(QWidget *parent)
@@ -33,6 +36,7 @@ void render_area::paintEvent(QPaintEvent*)
     
     //The drawing pen with its properties
     QPen pen;
+    color=colors[qrand()%colors.size()];
     pen.setWidth(4.0);
     pen.setColor(color);
     painter.setPen(pen);
@@ -65,7 +69,7 @@ void render_area::mousePressEvent(QMouseEvent *event)
 void render_area::mouseDoubleClickEvent(QMouseEvent *event)
 {
     //when a double click occurs, the circle change color
-    
+    color=colors[qrand()%colors.size()];
     repaint();
 }
 
