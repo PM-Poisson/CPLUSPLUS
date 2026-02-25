@@ -4,6 +4,8 @@
 #define RENDER_AREA_HPP
 
 #include <QWidget>
+#include <vector>
+#include <QColorDialog>
 
 //forward declaration of QPixmap
 class QPixmap;
@@ -42,7 +44,11 @@ private:
     /** A boolean indicating if a circle should be drawn or not */
     bool draw_circle;
 
-    Qt::GlobalColor
+    /** The current color of the circle */
+    QColor color;
+
+    QColorDialog color_dialog;
+
     /** Storage for the previous position of the mouse */
     int x_old,y_old;
     /** Current parameter of the circle

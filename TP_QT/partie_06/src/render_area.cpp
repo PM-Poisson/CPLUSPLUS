@@ -13,10 +13,11 @@
 
 render_area::render_area(QWidget *parent)
     :QWidget(parent),pixmap(new QPixmap),draw_circle(true),
-      x_old(0),y_old(0),xc(200),yc(150),diameter(150),colors{Qt::black, Qt::blue, Qt::green, Qt::yellow, Qt::orange, Qt::red, Qt::purple}
+      x_old(0),y_old(0),xc(200),yc(150),diameter(150)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
+    color_dialog.setCurrentColor(color);
 }
 
 render_area::~render_area()
@@ -36,14 +37,13 @@ void render_area::paintEvent(QPaintEvent*)
     
     //The drawing pen with its properties
     QPen pen;
-    color=colors[qrand()%colors.size()];
     pen.setWidth(4.0);
-    pen.setColor(color);
+    pen.setColor(Qt::black);
     painter.setPen(pen);
 
     //The brush class is usefull to fill the interior of the shapes
     QBrush brush = painter.brush();
-    brush.setColor(Qt::gray);
+    brush.setColor(color);
     brush.setStyle(Qt::SolidPattern);
     painter.setBrush(brush);
 
@@ -69,7 +69,7 @@ void render_area::mousePressEvent(QMouseEvent *event)
 void render_area::mouseDoubleClickEvent(QMouseEvent *event)
 {
     //when a double click occurs, the circle change color
-    color=colors[qrand()%colors.size()];
+    color_dialog.setCurrentColor(color);
     repaint();
 }
 
